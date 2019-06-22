@@ -5,7 +5,8 @@
     "pages/request_leave/request_leave",
     "pages/sign/sign",
     "pages/shop/shop",
-    "pages/message/message"
+    "pages/message/message",
+    "pages/cart/cart"
   ],
   "tabBar": {
     "borderStyle": "white",
@@ -17,6 +18,12 @@
       {
         "pagePath": "pages/home/home",
         "text": "首页",
+        "iconPath": "/images/home2.png",
+        "selectedIconPath": "/images/home1.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
         "iconPath": "/images/home2.png",
         "selectedIconPath": "/images/home1.png"
       },
@@ -33,5 +40,6 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "友家校园",
     "navigationBarTextStyle": "black"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
