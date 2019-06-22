@@ -6,7 +6,8 @@
     "pages/sign/sign",
     "pages/shop/shop",
     "pages/message/message",
-    "pages/cart/cart"
+    "pages/cart/cart",
+    "pages/productDesc/productDesc"
   ],
   "tabBar": {
     "borderStyle": "white",

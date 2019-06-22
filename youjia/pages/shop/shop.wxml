@@ -19,7 +19,8 @@
         <view class="content_title_desc">EXPLOSION RECOMMENDED</view>
         <block wx:for="{{products}}" wx:key="index">
           <view class="product_intro">
-            <navigator url="/pages/describe/describe?id={{item.id}}">
+          <!-- navigator should be dynamically load -->
+            <navigator url="/pages/productDesc/productDesc?id={{item.id}}">
               <image src="{{item.image}}"/>
               <view class="product_info">
                 <view class="productName">{{item.productName}}</view>
