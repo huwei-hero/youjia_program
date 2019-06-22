@@ -1,66 +1,167 @@
-// pages/shop/shop.js
+//shop.js
+//获取应用实例
+const app = getApp()
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
+  // data should be fetch from remote server
   data: {
+    index: 0,
+    imgUrls: [
+      // insert path of image like below for swiper
+      // '/images/01.jpg',
+
+    ],
+    indicatorDots: false,
+    autoplay: false,
+    interval: 3000,
+    duration: 800,
+    products: [{
+        id: 1,
+        // product image below
+        image: '',
+        productName: 'ISDN怡思丁',
+        describe: '"水"做的防晒',
+        discountPrice: 99,
+        originalPrice: 169,
+      },
+      {
+        id: 2,
+         // product image below
+        image: '',
+        productName: 'MUJI/无印良品',
+        describe: '敏感肌必备 清爽滋润',
+        discountPrice: 137,
+        originalPrice: 150,
+      },
+      {
+        id: 3,
+         // product image below
+        image: '',
+        productName: 'ELTAMD',
+        describe: '美国医生推荐的氨基酸洗面奶',
+        discountPrice: 138,
+        originalPrice: 199,
+      },
+    ],
+    skinCare: [{
+        id: 1,
+        image: '/images/a.jpg',
+        productName: '男朋友都看不出你化了妆|Hapsode/悦芙媞 素颜霜50g',
+        describe: '快速上妆自然气色',
+        discountPrice: 99,
+        originalPrice: 169,
+      },
+      {
+        id: 2,
+        image: '/images/b.jpg',
+        productName: '男朋友都看不出你化了妆|Hapsode/悦芙媞 素颜霜50g',
+        describe: '快速上妆自然气色',
+        discountPrice: 99,
+        originalPrice: 169,
+      },
+      {
+        id: 3,
+        image: '/images/c.jpg',
+        productName: '男朋友都看不出你化了妆|Hapsode/悦芙媞 素颜霜50g',
+        describe: '快速上妆自然气色',
+        discountPrice: 99,
+        originalPrice: 169,
+      },
+      {
+        id: 4,
+        image: '/images/a.jpg',
+        productName: '男朋友都看不出你化了妆|Hapsode/悦芙媞 素颜霜50g',
+        describe: '快速上妆自然气色',
+        discountPrice: 99,
+        originalPrice: 169,
+      },
+    ],
+    bestMakeup: [{
+        id: 1,
+        image: '/images/b.jpg',
+        productName: '男朋友都看不出你化了妆|Hapsode/悦芙媞 素颜霜50g',
+        describe: '快速上妆自然气色',
+        discountPrice: 99,
+        originalPrice: 169,
+      },
+      {
+        id: 2,
+        image: '/images/a.jpg',
+        productName: '男朋友都看不出你化了妆|Hapsode/悦芙媞 素颜霜50g',
+        describe: '快速上妆自然气色',
+        discountPrice: 99,
+        originalPrice: 169,
+      },
+      {
+        id: 2,
+        image: '/images/c.jpg',
+        productName: '男朋友都看不出你化了妆|Hapsode/悦芙媞 素颜霜50g',
+        describe: '快速上妆自然气色',
+        discountPrice: 99,
+        originalPrice: 169,
+      },
+    ],
+    bestLife: [{
+        id: 1,
+        image: '/images/c.jpg',
+        productName: '男朋友都看不出你化了妆|Hapsode/悦芙媞 素颜霜50g',
+        describe: '快速上妆自然气色',
+        discountPrice: 99,
+        originalPrice: 169,
+      },
+      {
+        id: 2,
+        image: '/images/b.jpg',
+        productName: '男朋友都看不出你化了妆|Hapsode/悦芙媞 素颜霜50g',
+        describe: '快速上妆自然气色',
+        discountPrice: 99,
+        originalPrice: 169,
+      },
+      {
+        id: 2,
+        image: '/images/a.jpg',
+        productName: '男朋友都看不出你化了妆|Hapsode/悦芙媞 素颜霜50g',
+        describe: '快速上妆自然气色',
+        discountPrice: 99,
+        originalPrice: 169,
+      },
+    ],
+  },
+  onLoad: function() {
 
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  select(e) {
+    let index = e.currentTarget.dataset.index;
+    console.log(index)
+    this.setData({
+      index
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onPullDownRefresh: function() {
+    console.log('--------下拉刷新-------')
+    wx.showNavigationBarLoading() //在标题栏中显示加载
+    setTimeout(() => {
+      wx.hideNavigationBarLoading() //完成停止加载
+      wx.stopPullDownRefresh() //停止下拉刷新
+    }, 1000)
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onReachBottom() {
+    wx.showLoading({
+      title: '玩命加载中'
+    })
+    wx.request({
+      url: 'https://www.easy-mock.com/mock/5b0fabe33eb25e1de3c41f2d/products',
+      method: 'GET',
+      success: (res) => {
+        // console.log(res.data.skinCare);
+        let skinCare_list = this.data.skinCare;
+        // console.log(skinCare_list);
+        let skinCare = [...skinCare_list, ...res.data.skinCare];
+        this.setData({
+          skinCare
+        })
+        wx.hideLoading();
+      }
+    })
   }
 })
