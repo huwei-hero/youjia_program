@@ -53,7 +53,7 @@ Page({
   go:function(res){
     var index = res.currentTarget.id;
     var name = this.data.icon[index-1].name;
-    //console.log('/pages/' + name + '/' + name)
+    console.log('/pages/' + name + '/' + name)
     wx.navigateTo({
       url: '/pages/' + name + '/' + name,
     })

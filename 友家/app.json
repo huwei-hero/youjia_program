@@ -1,10 +1,12 @@
 {
   "pages": [
-    "pages/home/home",
-    "pages/my/my",
-    "pages/request_leave/request_leave",
-    "pages/sign/sign",
     "pages/shop/shop",
+    "pages/shop/detail/detail",
+    "pages/shop/shopitem/shopitem",
+    "pages/home/home",
+    "pages/request_leave/request_leave",
+    "pages/my/my",
+    "pages/sign/sign",
     "pages/message/message"
   ],
   "tabBar": {

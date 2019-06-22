@@ -1,2 +1,24 @@
-<!--pages/request_leave/request_leave.wxml-->
-<text>pages/request_leave/request_leave.wxml</text>
+<view>
+  <form bindsubmit="submit">
+    <view class='moudule'>
+      <text>专业：{{}}</text>
+    </view>
+    <view class='moudule'>
+      <text>名字：{{}}</text>
+    </view>
+    <view class='moudule'>
+      <picker mode="date" value="{{startdate}}" start="2019-01-01" end="2019-12-31" bindchange='setstart'>
+        <text>起始时间:{{startdate}}</text>
+      </picker>
+    </view>
+    <view class='moudule'>
+      <picker mode="date" value="{{enddate}}" start="2019-01-01" end="2019-12-31"bindchange='setend'>
+        <text>截止时间:{{enddate}}</text>
+      </picker>
+    </view>
+    <view class='moudule'>请假事由：
+       <textarea name="beizhu"></textarea>
+    </view>
+    <button form-type='submit'>提交</button>
+  </form>
+</view>

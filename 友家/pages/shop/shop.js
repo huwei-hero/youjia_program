@@ -1,66 +1,57 @@
 // pages/shop/shop.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    icon: [
+      {
+        id: 1,
+        name: "生活",
+        img: "/images/logo.png",
+        text: "生活"
+      },
+      {
+        id: 2,
+        name: "学习",
+        img: "/images/logo.png",
+        text: "学习"
+      },
+      {
+        id: 3,
+        name: "体育",
+        img: "/images/logo.png",
+        text: "体育"
+      },
+      {
+        id: 4,
+        name: "食品",
+        img: "/images/logo.png",
+        text: "食品"
+      },
+      {
+        id: 5,
+        name: "卡类",
+        img: "/images/logo.png",
+        text: "卡类"
+      },
+      {
+        id: 6,
+        name: "其他",
+        img: "/images/logo.png",
+        text: "其他"
+      }
+    ]
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  search:function(res){
 
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  go:function(res){
+    var index = res.currentTarget.id;
+    wx.navigateTo({
+      url: '/pages/shop/shopitem/shopitem?id='+index,
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })
